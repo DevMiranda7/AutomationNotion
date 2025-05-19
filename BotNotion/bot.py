@@ -15,10 +15,10 @@ import datetime
 NOME, URGENCIA, DESCRICAO, CONFIRMAR, MAIS_TAREFAS = range(5)
 
 # Configurações APIs
-genai.configure(api_key="SUA API GEMINI")
+genai.configure(api_key="SUA_API_GEMINI")
 model = genai.GenerativeModel("gemini-1.5-flash")
-notion = Client(auth="API NOTION")
-notion_database_id = "SEU ID DO BANCO DO NOTION"
+notion = Client(auth="SEU_TOKEN_NOTION")
+notion_database_id = "SEU_DATABASE_ID_NOTION"
 
 # Teclado para urgência
 urgencia_inline_keyboard = InlineKeyboardMarkup([
@@ -157,7 +157,7 @@ async def ajuda(update: Update, context: ContextTypes.DEFAULT_TYPE):
     )
 
 def main():
-    app = Application.builder().token("CODE TELEGRAM").build()
+    app = Application.builder().token("SEU_TOKEN_TELEGRAM").build()
 
     conv_handler = ConversationHandler(
         entry_points=[MessageHandler(filters.Regex("^rotina$"), start_rotina)],

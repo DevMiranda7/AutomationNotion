@@ -1,0 +1,63 @@
+🧑‍💻 Como usar este código
+1. Pré-requisitos
+Você precisa instalar as seguintes bibliotecas Python:
+
+bash
+Copy
+Edit
+pip install python-telegram-bot==20.0
+pip install notion-client
+pip install google-generativeai
+⚠️ Atenção: o código usa a versão 20+ da python-telegram-bot. Certifique-se de usar essa versão ou ajustar os imports.
+
+2. Obtenha suas chaves de API
+Telegram Bot Token
+Crie seu bot no BotFather e obtenha o token.
+
+Notion Integration Token e Database ID
+
+Crie uma integração no Notion: https://www.notion.so/my-integrations
+
+Compartilhe seu banco de dados com essa integração.
+
+Copie o token e o database_id.
+
+(Opcional) API Key da Google Gemini
+Se você quiser integrar com a IA da Google, cadastre-se e gere uma chave: https://aistudio.google.com/app/apikey
+
+3. Substitua as chaves no código
+No seu código, edite as seguintes linhas com as suas credenciais:
+
+python
+Copy
+Edit
+genai.configure(api_key="SUA_API_GEMINI")
+notion = Client(auth="SEU_TOKEN_NOTION")
+notion_database_id = "SEU_DATABASE_ID_NOTION"
+E também:
+
+python
+Copy
+Edit
+app = Application.builder().token("SEU_TOKEN_TELEGRAM").build()
+🚀 Executando o bot
+Depois de configurar, basta rodar:
+
+bash
+Copy
+Edit
+python seu_arquivo.py
+Se tudo estiver correto, verá no terminal:
+
+nginx
+Copy
+Edit
+Bot iniciado...
+Abra o Telegram e envie a mensagem:
+
+nginx
+Copy
+Edit
+rotina
+O bot iniciará a conversa de coleta da tarefa.
+
